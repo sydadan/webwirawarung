@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Register</title>
+    <title>WiraWarung | Register</title>
 </head>
 <body>
-    <h2>Register</h2>
-    <form action="login.html" method="get">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Register</button>
-    </form>
-    <a href="login.html">Already have an account? Login here</a>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>WiraWarung</h1>
+            <h2>Register</h2>
+            <form action="login.html" method="get">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Register</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
 </body>
 </html>
