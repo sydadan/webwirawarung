@@ -1,33 +1,120 @@
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Common box styles */
+.login-box, .dashboard-box, .order-box, .checkout-box, .receipt-box {
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-h1, h2 {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    margin-bottom: 10px;
     color: #333;
+    font-size: 36px;
+    font-family: 'Georgia', serif;
 }
 
-form {
-    display: inline-block;
+h2 {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+/* Input group */
+.input-group {
+    margin-bottom: 20px;
     text-align: left;
-    margin-top: 20px;
 }
 
-label {
+.input-group label {
     display: block;
     margin-bottom: 5px;
+    color: #666;
 }
 
-input, select, button {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
+.input-group input, .input-group select {
     width: 100%;
-    max-width: 300px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
 }
 
+.input-group input:focus, .input-group select:focus {
+    border-color: #ff7e5f;
+    outline: none;
+}
+
+/* Buttons */
+.login-button, .order-button {
+    width: 100%;
+    padding: 12px 0;
+    background: #ff7e5f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover, .order-button:hover {
+    background: #feb47b;
+}
+
+/* Links */
+.login-box p, .checkout-box p, .receipt-box p {
+    margin-top: 20px;
+    color: #555;
+}
+
+.login-box a, .checkout-box a {
+    color: #ff7e5f;
+    text-decoration: none;
+}
+
+.login-box a:hover, .checkout-box a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation styles */
 nav ul {
     list-style: none;
     padding: 0;
@@ -36,4 +123,15 @@ nav ul {
 nav li {
     display: inline;
     margin-right: 10px;
+}
+
+nav a {
+    color: #ff7e5f;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #feb47b;
 }
