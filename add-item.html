@@ -10,7 +10,7 @@
     <div class="container">
         <div class="add-item-box">
             <h1>Tambah Makanan dan Minuman</h1>
-            <form action="dashboard.html" method="post">
+            <form id="addItemForm">
                 <div class="input-group">
                     <label for="item-name">Nama Item</label>
                     <input type="text" id="item-name" name="item-name" required>
@@ -30,5 +30,28 @@
             </form>
         </div>
     </div>
+    <script>
+        document.getElementById('addItemForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('item-name').value;
+            const category = document.getElementById('item-category').value;
+            const price = document.getElementById('item-price').value;
+
+            fetch('http://localhost:3000/api/items', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, category, price })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Item berhasil ditambahkan!');
+                window.location.href = 'dashboard.html';
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
