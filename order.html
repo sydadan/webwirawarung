@@ -10,13 +10,11 @@
     <div class="container">
         <div class="order-box">
             <h1>Menu Pemesanan</h1>
-            <form action="checkout.html" method="get">
+            <form id="orderForm" action="checkout.html" method="get">
                 <div class="input-group">
                     <label for="item">Pilih Menu</label>
                     <select id="item" name="item" required>
-                        <option value="nasi-goreng">Nasi Goreng</option>
-                        <option value="mie-goreng">Mie Goreng</option>
-                        <option value="sate-ayam">Sate Ayam</option>
+                        <!-- Options will be populated here -->
                     </select>
                 </div>
                 <div class="input-group">
@@ -27,5 +25,21 @@
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:3000/api/items')
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById('item');
+                    data.forEach(item => {
+                        const option = document.createElement('option');
+                        option.value = item.id;
+                        option.textContent = `${item.name} - Rp. ${item.price}`;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 </body>
 </html>
