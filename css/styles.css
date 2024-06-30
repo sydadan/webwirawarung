@@ -19,7 +19,7 @@ body {
 }
 
 /* Common box styles */
-.login-box, .dashboard-box, .order-box, .checkout-box, .receipt-box {
+.login-box, .dashboard-box, .order-box, .checkout-box, .receipt-box, .add-item-box {
     background: #fff;
     padding: 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -83,7 +83,7 @@ h2 {
 }
 
 /* Buttons */
-.login-button, .order-button {
+.login-button, .order-button, .add-item-button {
     width: 100%;
     padding: 12px 0;
     background: #ff7e5f;
@@ -95,7 +95,7 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.login-button:hover, .order-button:hover {
+.login-button:hover, .order-button:hover, .add-item-button:hover {
     background: #feb47b;
 }
 
@@ -121,7 +121,7 @@ nav ul {
 }
 
 nav li {
-    display: inline;
+    display: inline-block;
     margin-right: 10px;
 }
 
